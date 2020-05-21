@@ -8,8 +8,7 @@ import androidx.work.WorkerParameters
 
 class MessageWorker(private val context: Context, workParams: WorkerParameters): Worker(context, workParams) {
     override fun doWork(): Result {
-        Log.i("gggg", "fdsf")
-
+        Log.i("gggggg", "fdsff")
         return Result.success()
     }
 
