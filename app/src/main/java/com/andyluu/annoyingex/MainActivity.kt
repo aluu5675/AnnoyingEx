@@ -2,7 +2,6 @@ package com.andyluu.annoyingex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         btnHereWeGo.setOnClickListener {
             if (!exMessages.isEmpty()) {
                 message = exMessages[Random.nextInt(exMessages.size)]
-                Log.i("gggggg", message)
             }
             (application as AnnoyingExApp).messagesManager.spamMessages(message)
         }
