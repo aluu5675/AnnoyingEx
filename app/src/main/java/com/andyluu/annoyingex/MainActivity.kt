@@ -8,30 +8,24 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
-    var exMessages: List<String> = listOf()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var message = ""
-        (application as AnnoyingExApp).messagesManager.fetchMessages({listOfMessages ->
-            exMessages = listOfMessages.messages
-        }, {
-            Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
-            message = "unable to retrieve message"
-        })
+        val exApp = (application as AnnoyingExApp)
 
         btnHereWeGo.setOnClickListener {
-            if (!exMessages.isEmpty()) {
-                message = exMessages[Random.nextInt(exMessages.size)]
+            if (!exApp.exMessages.isEmpty()) {
+                exApp.message = exApp.exMessages[Random.nextInt(exApp.exMessages.size)]
             }
-            (application as AnnoyingExApp).messagesManager.spamMessages(message)
+            (application as AnnoyingExApp).messagesManager.spamMessages(exApp.message)
         }
 
         btnClosure.setOnClickListener {
-            (application as AnnoyingExApp).messagesManager.stopMessages()
+            exApp.messagesManager.stopMessages()
         }
+
+        textMessage.text = exApp.message
     }
 
 }
