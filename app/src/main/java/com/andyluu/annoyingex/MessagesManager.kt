@@ -64,7 +64,6 @@ class MessagesManager(private val context: Context) {
                 .addTag(EX_MESSAGES_WORK_TAG)
                 .build()
             workManager.enqueue(workRequest)
-            messageNotification(message)
         }
     }
 
@@ -80,7 +79,7 @@ class MessagesManager(private val context: Context) {
         }
     }
 
-    private fun messageNotification(message: String) {
+    fun messageNotification(message: String) {
         val mainActivityIntent = Intent(context, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
