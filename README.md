@@ -6,6 +6,10 @@ Homework 5 – Background Tasks & Notifications
 
 This is a messaging app that notifies the user of different text messages they receive from their ex.
 
+## Extra Credit
+
+I have completed extra credit #1.
+
 ## Screenshots
 
 <a href="https://imgur.com/oi9FYAI"><img src="https://i.imgur.com/oi9FYAI.png" title="source: imgur.com" /></a>
