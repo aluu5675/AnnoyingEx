@@ -52,7 +52,7 @@ class MessagesManager(private val context: Context) {
         queue.add(request)
     }
 
-    fun spamMessages(message: String) {
+    fun spamMessages() {
         if (!isSpamMessagesRunning()) {
             val constraints = Constraints.Builder()
                 .setRequiresCharging(true)
