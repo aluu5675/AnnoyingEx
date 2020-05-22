@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
             if (!exApp.exMessages.isEmpty()) {
                 exApp.message = exApp.exMessages[Random.nextInt(exApp.exMessages.size)]
             }
-            (application as AnnoyingExApp).messagesManager.spamMessages(exApp.message)
+            (application as AnnoyingExApp).messagesManager.spamMessages()
         }
 
         btnClosure.setOnClickListener {
